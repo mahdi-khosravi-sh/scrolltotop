@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScrollToTop">
+        <attr name="minimumScroll" format="dimension" />
+        <attr name="heavyCheckup" format="boolean" />
+        <attr name="rippleColor" format="color" />
+        <attr name="smoothScroll" format="boolean" />
+        <attr name="shortScrollEnabled" format="boolean" />
+        <attr name="android:background" />
+        <attr name="srcCompat" />
+        <attr name="android:src" />
+        <attr name="android:elevation" />
+        <attr name="android:padding" />
+    </declare-styleable>
+
+    <declare-styleable name="ScrollToTop2">
+        <attr name="minimumPosition" format="integer" />
+        <attr name="reverseLayout" />
+    </declare-styleable>
+</resources>

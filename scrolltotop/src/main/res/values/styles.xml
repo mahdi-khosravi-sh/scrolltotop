@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ScrollToTop">
+        <item name="minimumScroll">250dp</item>
+        <item name="heavyCheckup">true</item>
+        <item name="android:padding">4dp</item>
+    </style>
+</resources>
