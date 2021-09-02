@@ -22,9 +22,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
+[![Apache License][license-shield]][license-url]
 
 
 <!-- TABLE OF CONTENTS -->
@@ -168,7 +166,5 @@ Project Link: [https://github.com/mahdidev78/scrolltotop](https://github.com/mah
 [issues-url]: https://github.com/mahdidev78/scrolltotop/issues
 [license-shield]: https://img.shields.io/github/license/mahdidev78/ScrollToTop.svg?style=for-the-badge
 [license-url]: https://github.com/mahdidev78/scrolltotop/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/mahdidev78
 [product-screenshot]: images/screenshot.png
 
