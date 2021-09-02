@@ -164,7 +164,7 @@ Project Link: [https://github.com/mahdidev78/scrolltotop](https://github.com/mah
 [forks-url]: https://github.com/mahdidev78/scrolltotop/network/members
 [stars-shield]: https://img.shields.io/github/stars/mahdidev78/ScrollToTop.svg?style=for-the-badge
 [stars-url]: https://github.com/mahdidev78/scrolltotop/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/ScrollToTop.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/mahdidev78/ScrollToTop.svg?style=for-the-badge
 [issues-url]: https://github.com/mahdidev78/scrolltotop/issues
 [license-shield]: https://img.shields.io/github/license/mahdidev78/ScrollToTop.svg?style=for-the-badge
 [license-url]: https://github.com/mahdidev78/scrolltotop/blob/master/LICENSE.txt
