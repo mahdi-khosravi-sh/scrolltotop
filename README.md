@@ -1,6 +1,14 @@
 # Scroll To Top
 [![](https://jitpack.io/v/mahdidev78/scrolltotop.svg)](https://jitpack.io/#mahdidev78/scrolltotop)
 
+<!-- 
+*** Code Stats 
+-->
+![GitHub repo size](https://img.shields.io/github/repo-size/mahdidev78/scrolltotop)
+![GitHub language count](https://img.shields.io/github/languages/count/mahdidev78/scrolltotop)
+![GitHub top language](https://img.shields.io/github/languages/top/mahdidev78/scrolltotop)
+![GitHub last commit](https://img.shields.io/github/last-commit/mahdidev78/scrolltotop?color=red)
+
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -23,6 +31,9 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Apache License][license-shield]][license-url]
+
+
+
 
 
 <!-- TABLE OF CONTENTS -->
