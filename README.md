@@ -167,15 +167,15 @@ Project Link: [https://github.com/mahdidev78/scrolltotop](https://github.com/mah
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/mahdidev78/ScrollToTop.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/mahdidev78/ScrollToTop.svg?
 [contributors-url]: https://github.com/mahdidev78/scrolltotop/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/mahdidev78/ScrollToTop.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/mahdidev78/ScrollToTop.svg?
 [forks-url]: https://github.com/mahdidev78/scrolltotop/network/members
-[stars-shield]: https://img.shields.io/github/stars/mahdidev78/ScrollToTop.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/mahdidev78/ScrollToTop.svg?
 [stars-url]: https://github.com/mahdidev78/scrolltotop/stargazers
-[issues-shield]: https://img.shields.io/github/issues/mahdidev78/ScrollToTop.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/mahdidev78/ScrollToTop.svg?
 [issues-url]: https://github.com/mahdidev78/scrolltotop/issues
-[license-shield]: https://img.shields.io/github/license/mahdidev78/ScrollToTop.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/mahdidev78/ScrollToTop.svg?
 [license-url]: https://github.com/mahdidev78/scrolltotop/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
 
