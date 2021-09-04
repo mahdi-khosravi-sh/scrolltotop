@@ -160,7 +160,7 @@ Distributed under the Apache2.0 License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Mahdi Khosravi - mahdidev78@gmail.com
+Mahdi Khosravi - mahdi.khosravi.dev78@gmail.com
 
 Project Link: [https://github.com/mahdidev78/scrolltotop](https://github.com/mahdidev78/scrolltotop)
 
