@@ -5,7 +5,7 @@
         <attr name="heavyCheckup" format="boolean" />
         <attr name="rippleColor" format="color" />
         <attr name="smoothScroll" format="boolean" />
-        <attr name="shortScrollEnabled" format="boolean" />
+        <attr name="shortScroll" format="boolean" />
         <attr name="android:background" />
         <attr name="srcCompat" />
         <attr name="android:src" />
