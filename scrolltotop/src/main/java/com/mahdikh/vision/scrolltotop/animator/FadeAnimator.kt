@@ -1,49 +1,41 @@
-package com.mahdikh.vision.scrolltotop.animator;
+package com.mahdikh.vision.scrolltotop.animator
 
-import android.view.View;
+import android.view.View
 
-public class FadeAnimator extends BaseAnimator {
-    private float maxAlpha;
+open class FadeAnimator : BaseAnimator {
+    var maxAlpha: Float
 
-    public FadeAnimator(float maxAlpha) {
-        this.maxAlpha = maxAlpha;
+    constructor(maxAlpha: Float) {
+        this.maxAlpha = maxAlpha
     }
 
-    public FadeAnimator() {
-        maxAlpha = 0.8F;
+    constructor() {
+        maxAlpha = 0.8f
     }
 
-    @Override
-    public void onPrepare(View view) {
-        view.setAlpha(0.0F);
-        view.setVisibility(View.GONE);
+    override fun onPrepare(view: View) {
+        view.alpha = 0.0f
+        view.visibility = View.GONE
     }
 
-    @Override
-    public void onShow(View view) {
-        view.setVisibility(View.VISIBLE);
-        view.setAlpha(0.0F);
+    override fun onShow(view: View) {
+        view.visibility = View.VISIBLE
+        view.alpha = 0.0f
         view.animate()
-                .alpha(maxAlpha)
-                .setDuration(getDuration())
-                .setInterpolator(getInterpolator());
+            .alpha(maxAlpha)
+            .setDuration(duration.toLong()).interpolator = interpolator
     }
 
-    @Override
-    public void onHide(View view) {
+    override fun onHide(view: View) {
         view.animate()
-                .alpha(0F)
-                .setDuration(getDuration())
-                .setInterpolator(getInterpolator())
-                .withEndAction(() -> view.setVisibility(View.GONE));
+            .alpha(0f)
+            .setDuration(duration.toLong())
+            .setInterpolator(interpolator)
+            .withEndAction { view.visibility = View.GONE }
     }
 
-    public FadeAnimator setMaxAlpha(float maxAlpha) {
-        this.maxAlpha = maxAlpha;
-        return this;
-    }
-
-    public float getMaxAlpha() {
-        return maxAlpha;
+    fun setMaxAlpha(maxAlpha: Float): FadeAnimator {
+        this.maxAlpha = maxAlpha
+        return this
     }
 }

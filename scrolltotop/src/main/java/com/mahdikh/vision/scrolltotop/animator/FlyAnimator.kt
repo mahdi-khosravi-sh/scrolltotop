@@ -1,81 +1,53 @@
-package com.mahdikh.vision.scrolltotop.animator;
+package com.mahdikh.vision.scrolltotop.animator
 
-import android.view.View;
-import android.view.animation.Interpolator;
+import android.view.View
+import android.view.animation.Interpolator
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 
-import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+class FlyAnimator : SlideAnimator() {
+    private var flyFlag = false
+    private var hasShowRequest = false
+    var flyDuration = 1200
+    var flyToScale = 0.8f
+    var flyToAlpha = 0.0f
+    var flyToY = 0.0f
+    var flyInterpolator: Interpolator = FastOutSlowInInterpolator()
 
-public class FlyAnimator extends SlideAnimator {
-    private boolean      flyFlag         = false;
-    private boolean      hasShowRequest  = false;
-    private int          flyDuration     = 1200;
-    private float        flyToScale      = 0.8F;
-    private float        flyToAlpha      = 0.0F;
-    private float        flyToY          = 0.0F;
-    private Interpolator flyInterpolator = new FastOutSlowInInterpolator();
-
-    @Override
-    public void onShow(View view) {
+    override fun onShow(view: View) {
         if (!flyFlag) {
-            view.setRotation(0.0F);
-            super.onShow(view);
+            view.rotation = 0.0f
+            super.onShow(view)
         } else {
-            hasShowRequest = true;
+            hasShowRequest = true
         }
     }
 
-    @Override
-    public void onHide(View view) {
+    override fun onHide(view: View) {
         if (!flyFlag) {
-            view.setRotation(180.0F);
-            super.onHide(view);
+            view.rotation = 180.0f
+            super.onHide(view)
         }
     }
 
-    @Override
-    public void onStartScroll(View view) {
-        flyFlag = true;
+    override fun onStartScroll(view: View) {
+        flyFlag = true
         view.animate()
-                .setDuration(flyDuration)
-                .setInterpolator(flyInterpolator)
-                .y(flyToY)
-                .alpha(flyToAlpha)
-                .scaleX(flyToScale)
-                .scaleY(flyToScale)
-                .setStartDelay(0)
-                .withEndAction(() -> {
-                    view.setVisibility(View.GONE);
-                    view.setTranslationY(view.getHeight());
-                    view.setAlpha(0.0F);
-                    flyFlag = false;
-                    if (hasShowRequest) {
-                        onShow(view);
-                        hasShowRequest = false;
-                    }
-                });
-    }
-
-    public FlyAnimator setFlyToScale(float flyToScale) {
-        this.flyToScale = flyToScale;
-        return this;
-    }
-
-    public FlyAnimator setFlyDuration(int flyDuration) {
-        this.flyDuration = flyDuration;
-        return this;
-    }
-
-    public FlyAnimator setFlyInterpolator(Interpolator flyInterpolator) {
-        this.flyInterpolator = flyInterpolator;
-        return this;
-    }
-
-    public FlyAnimator setFlyToAlpha(float flyToAlpha) {
-        this.flyToAlpha = flyToAlpha;
-        return this;
-    }
-
-    public void setFlyToY(float flyToY) {
-        this.flyToY = flyToY;
+            .setDuration(flyDuration.toLong())
+            .setInterpolator(flyInterpolator)
+            .y(flyToY)
+            .alpha(flyToAlpha)
+            .scaleX(flyToScale)
+            .scaleY(flyToScale)
+            .setStartDelay(0)
+            .withEndAction {
+                view.visibility = View.GONE
+                view.translationY = view.height.toFloat()
+                view.alpha = 0.0f
+                flyFlag = false
+                if (hasShowRequest) {
+                    onShow(view)
+                    hasShowRequest = false
+                }
+            }
     }
 }

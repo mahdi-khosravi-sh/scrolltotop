@@ -1,24 +1,17 @@
-package com.mahdikh.vision.scrolltotop.animator;
+package com.mahdikh.vision.scrolltotop.animator
 
-import android.view.View;
+import android.view.View
 
-public class SlideAnimator extends ScaleAnimator {
-    @Override
-    public void onPrepare(View view) {
-        super.onPrepare(view);
+open class SlideAnimator : ScaleAnimator() {
+    override fun onShow(view: View) {
+        view.measure(0, 0)
+        view.translationY = view.measuredHeight.toFloat()
+        super.onShow(view)
+        view.animate().translationY(0f)
     }
 
-    @Override
-    public void onShow(View view) {
-        view.measure(0, 0);
-        view.setTranslationY(view.getMeasuredHeight());
-        super.onShow(view);
-        view.animate().translationY(0);
-    }
-
-    @Override
-    public void onHide(View view) {
-        super.onHide(view);
-        view.animate().translationY(view.getHeight());
+    override fun onHide(view: View) {
+        super.onHide(view)
+        view.animate().translationY(view.height.toFloat())
     }
 }

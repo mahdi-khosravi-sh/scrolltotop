@@ -1,106 +1,100 @@
-package com.mahdikh.vision.scrolltotop.widget;
+package com.mahdikh.vision.scrolltotop.widget
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
-import com.mahdikh.vision.scrolltotop.R;
+import android.content.Context
+import androidx.recyclerview.widget.RecyclerView
+import android.util.AttributeSet
+import com.mahdikh.vision.scrolltotop.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 /**
  * پشتیبانی از لایه برعکس شده یا reverseLayout
  * پشتیبانی از تنظیم minimumPosition
  */
-public class ScrollToTop2 extends ScrollToTop {
-    private boolean reverseLayout;
+class ScrollToTop2 : ScrollToTop {
+    var reverseLayout = false
+
     /**
      * اگر مقدار غیر از RecyclerView.NO_POSITION داشته باشد به این معناست
      * که نما در صورتی نمایان شود که عمل اسکرول این position را رد کرده باشد
      */
-    private int     minimumPosition;
+    var minimumPosition = RecyclerView.NO_POSITION
 
-    public ScrollToTop2(@NonNull Context context) {
-        super(context);
-        minimumPosition = RecyclerView.NO_POSITION;
+    constructor(context: Context) : super(context) {
+        initialization(context, null, 0)
     }
 
-    public ScrollToTop2(@NonNull Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
+        initialization(context, attrs, 0)
     }
 
-    public ScrollToTop2(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
+        initialization(context, attrs, defStyleAttr)
     }
 
-    @Override
-    protected void initialization(Context context, AttributeSet attrs, int defStyleAttr) {
-        super.initialization(context, attrs, defStyleAttr);
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ScrollToTop2, 0, defStyleAttr);
-        minimumPosition = a.getInt(R.styleable.ScrollToTop2_minimumPosition, RecyclerView.NO_POSITION);
-        reverseLayout = a.getBoolean(R.styleable.ScrollToTop2_reverseLayout, false);
-        a.recycle();
-    }
-
-    @Override
-    public void setupWithRecyclerView(@NonNull RecyclerView recyclerView) {
-        super.setupWithRecyclerView(recyclerView);
-        reverseLayout = getReverseLayout();
-    }
-
-    public void setReverseLayout(boolean reverseLayout) {
-        this.reverseLayout = reverseLayout;
-    }
-
-    protected boolean getReverseLayout() {
-        RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
-        if (manager != null) {
-            if (manager instanceof LinearLayoutManager) {
-                return ((LinearLayoutManager) manager).getReverseLayout();
-            } else if (manager instanceof StaggeredGridLayoutManager) {
-                return ((StaggeredGridLayoutManager) manager).getReverseLayout();
+    private fun initialization(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
+        val a = context.obtainStyledAttributes(attrs, R.styleable.ScrollToTop2, 0, defStyleAttr)
+        val count = a.indexCount
+        var index: Int
+        for (i in 0 until count) {
+            index = a.getIndex(i)
+            when (index) {
+                R.styleable.ScrollToTop2_minimumPosition -> {
+                    minimumPosition = a.getInt(index, RecyclerView.NO_POSITION)
+                }
+                R.styleable.ScrollToTop2_reverseLayout -> {
+                    reverseLayout = a.getBoolean(index, false)
+                }
             }
         }
-        return false;
+        a.recycle()
     }
 
-    @Override
-    protected int getCurrentScroll() {
+    override fun setupWithRecyclerView(recyclerView: RecyclerView) {
+        super.setupWithRecyclerView(recyclerView)
+        reverseLayout = isRecyclerViewReverseLayout()
+    }
+
+    private fun isRecyclerViewReverseLayout(): Boolean {
+        val manager = recyclerView?.layoutManager
+        if (manager != null) {
+            if (manager is LinearLayoutManager) {
+                return manager.reverseLayout
+            } else if (manager is StaggeredGridLayoutManager) {
+                return manager.reverseLayout
+            }
+        }
+        return false
+    }
+
+    override fun computeCurrentScroll(): Int {
         if (reverseLayout) {
             /*
              * محاسبه مقدار اسکرول در لایه برعکس شده reverseLayout
              */
-            return recyclerView.computeVerticalScrollRange() -
-                    (recyclerView.computeVerticalScrollExtent() + super.getCurrentScroll());
+            recyclerView?.let {
+                return it.computeVerticalScrollRange() - (it.computeVerticalScrollExtent() + super.computeCurrentScroll())
+            }
         }
-        return super.getCurrentScroll();
+        return super.computeCurrentScroll()
     }
 
-    @Override
-    protected void checkupScroll() {
+    override fun checkupScroll() {
         if (minimumPosition != RecyclerView.NO_POSITION) {
-            int firstVisible = getFirstVisiblePosition();
+            val firstVisible = getFirstVisiblePosition()
             if (firstVisible > minimumPosition && isOnceCall()) {
-                show();
-                setOnceCall(false);
+                show()
+                setOnceCall(false)
             } else if (firstVisible <= minimumPosition && !isOnceCall()) {
-                hide();
-                setOnceCall(true);
+                hide()
+                setOnceCall(true)
             }
         } else {
-            super.checkupScroll();
+            super.checkupScroll()
         }
-    }
-
-    public void setMinimumPosition(int minimumPosition) {
-        this.minimumPosition = minimumPosition;
-    }
-
-    public int getMinimumPosition() {
-        return minimumPosition;
     }
 }

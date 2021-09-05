@@ -1,52 +1,46 @@
-package com.mahdikh.vision.scrolltotop.animator;
+package com.mahdikh.vision.scrolltotop.animator
 
-import android.view.View;
+import android.view.View
 
-public class ScaleAnimator extends FadeAnimator {
-    private float fromScale;
+open class ScaleAnimator : FadeAnimator {
+    var fromScale: Float
 
-    public ScaleAnimator(float maxAlpha, float fromScale) {
-        super(maxAlpha);
-        this.fromScale = fromScale;
+    constructor(maxAlpha: Float, fromScale: Float) : super(maxAlpha) {
+        this.fromScale = fromScale
     }
 
-    public ScaleAnimator(float fromScale) {
-        this.fromScale = fromScale;
+    constructor(fromScale: Float) {
+        this.fromScale = fromScale
     }
 
-    public ScaleAnimator() {
-        fromScale = 0.85F;
+    constructor() {
+        fromScale = 0.85f
     }
 
-    @Override
-    public void onPrepare(View view) {
-        super.onPrepare(view);
-        view.setScaleX(fromScale);
-        view.setScaleY(fromScale);
+    override fun onPrepare(view: View) {
+        super.onPrepare(view)
+        view.scaleX = fromScale
+        view.scaleY = fromScale
     }
 
-    @Override
-    public void onShow(View view) {
-        view.setScaleY(fromScale);
-        view.setScaleX(fromScale);
-
-        super.onShow(view);
-
+    override fun onShow(view: View) {
+        view.scaleY = fromScale
+        view.scaleX = fromScale
+        super.onShow(view)
         view.animate()
-                .scaleX(1.0F)
-                .scaleY(1.0F);
+            .scaleX(1.0f)
+            .scaleY(1.0f)
     }
 
-    @Override
-    public void onHide(View view) {
-        super.onHide(view);
+    override fun onHide(view: View) {
+        super.onHide(view)
         view.animate()
-                .scaleX(fromScale)
-                .scaleY(fromScale);
+            .scaleX(fromScale)
+            .scaleY(fromScale)
     }
 
-    public ScaleAnimator setFromScale(float fromScale) {
-        this.fromScale = fromScale;
-        return this;
+    fun setFromScale(fromScale: Float): ScaleAnimator {
+        this.fromScale = fromScale
+        return this
     }
 }

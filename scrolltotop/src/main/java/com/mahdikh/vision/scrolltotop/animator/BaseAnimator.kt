@@ -1,50 +1,17 @@
-package com.mahdikh.vision.scrolltotop.animator;
+package com.mahdikh.vision.scrolltotop.animator
 
-import android.view.View;
-import android.view.animation.Interpolator;
+import android.view.View
+import android.view.animation.Interpolator
 
-public abstract class BaseAnimator {
-    private int          duration = 125;
-    private Interpolator interpolator;
+abstract class BaseAnimator {
+    var duration = 125
+    var interpolator: Interpolator? = null
 
-    public BaseAnimator setInterpolator(Interpolator interpolator) {
-        this.interpolator = interpolator;
-        return this;
-    }
+    abstract fun onPrepare(view: View)
 
-    public Interpolator getInterpolator() {
-        return interpolator;
-    }
+    abstract fun onShow(view: View)
 
-    public BaseAnimator setDuration(int duration) {
-        this.duration = duration;
-        return this;
-    }
+    abstract fun onHide(view: View)
 
-    public int getDuration() {
-        return duration;
-    }
-
-    /**
-     * آماده سازی و مقدار دهی اولیه نما
-     * این تابع فقط یکبار فراخوانی خواهد شد
-     */
-    public abstract void onPrepare(View view);
-
-    /**
-     * زمانی که اسکرول مرز حداقل را رد کند نما باید نمایان شود
-     */
-    public abstract void onShow(View view);
-
-    /**
-     * زمانی که اسکرول به حداقل نزدیک شود و وارد حداقل شود نما باید مخفی شود
-     */
-    public abstract void onHide(View view);
-
-    /**
-     * زمانی که روی نما کلیک شد و عمل اسکرول به بالا انجام شد
-     */
-    public void onStartScroll(View view) {
-
-    }
+    open fun onStartScroll(view: View) {}
 }
