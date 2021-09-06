@@ -1,9 +1,11 @@
 # Scroll To Top
-[![](https://jitpack.io/v/mahdidev78/scrolltotop.svg)](https://jitpack.io/#mahdidev78/scrolltotop)
+<div align="center">
 
-<!-- 
-*** Code Stats 
--->
+  https://user-images.githubusercontent.com/88603424/132222272-24f435ee-a503-4768-b635-f8277a800e73.mp4
+
+</div>
+  
+[![](https://jitpack.io/v/mahdidev78/scrolltotop.svg)](https://jitpack.io/#mahdidev78/scrolltotop)
 ![GitHub repo size](https://img.shields.io/github/repo-size/mahdidev78/scrolltotop)
 ![GitHub language count](https://img.shields.io/github/languages/count/mahdidev78/scrolltotop)
 ![GitHub top language](https://img.shields.io/github/languages/top/mahdidev78/scrolltotop)
