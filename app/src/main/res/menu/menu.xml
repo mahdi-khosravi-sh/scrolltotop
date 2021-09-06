@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_smoothScroll"
+        android:checkable="true"
+        android:checked="true"
+        android:title="Smooth Scroll" />
+    <item
+        android:id="@+id/item_heavyCheckup"
+        android:checkable="true"
+        android:checked="true"
+        android:title="Heavy Checkup" />
+    <item
+        android:id="@+id/item_shortScroll"
+        android:checkable="true"
+        android:title="Short Scroll" />
+
+    <item android:title="Animator">
+        <menu>
+            <group
+                android:id="@+id/animators"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/item_fade"
+                    android:checked="true"
+                    android:title="Fade" />
+                <item
+                    android:id="@+id/item_fly"
+                    android:title="Fly" />
+                <item
+                    android:id="@+id/item_scale"
+                    android:title="Scale" />
+                <item
+                    android:id="@+id/item_slide"
+                    android:title="Slide" />
+                <item
+                    android:id="@+id/item_noAnimator"
+                    android:title="No Animator" />
+            </group>
+        </menu>
+    </item>
+</menu>

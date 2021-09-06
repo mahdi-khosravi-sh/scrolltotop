@@ -22,6 +22,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_margin="10dp"
-        app:rippleColor="#f55" />
+        app:rippleColor="#999999" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
