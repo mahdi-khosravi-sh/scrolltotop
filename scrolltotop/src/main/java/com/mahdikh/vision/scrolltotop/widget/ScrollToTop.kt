@@ -9,6 +9,7 @@ import android.util.AttributeSet
 import androidx.annotation.ColorInt
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -64,7 +65,10 @@ open class ScrollToTop : AppCompatImageView {
     var animator: BaseAnimator? = FadeAnimator(0.8f)
         set(value) {
             field = value
-            prepare()
+            if (!isVisible) {
+                resetProperties()
+                prepare()
+            }
         }
 
     private val scrollListener: RecyclerView.OnScrollListener = object :
@@ -261,6 +265,13 @@ open class ScrollToTop : AppCompatImageView {
                 )
             )
         }
+    }
+
+    private fun resetProperties() {
+        scaleX = 1.0F
+        scaleY = 1.0F
+        translationX = 1.0F
+        translationY = 1.0F
     }
 
     override fun performClick(): Boolean {
