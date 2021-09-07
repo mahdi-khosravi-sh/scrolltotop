@@ -58,7 +58,7 @@ open class ScrollToTop : AppCompatImageView {
      * توابع show یا hide را فراخوانی کند
      * وجود این متغییر از فراخوانی تکراری توابع نامبرده جلوگیری میکند
      */
-    private var onceCall = true
+    private var callFlag = true
 
     protected var recyclerView: RecyclerView? = null
 
@@ -84,7 +84,7 @@ open class ScrollToTop : AppCompatImageView {
             if (performedClick) {
                 if (newState == RecyclerView.SCROLL_STATE_DRAGGING) {
                     // onScrollInterrupted
-                    onceCall = true
+                    callFlag = true
                     performedClick = false
                 } else if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     //onScrollCompleted
@@ -189,12 +189,12 @@ open class ScrollToTop : AppCompatImageView {
 
     protected open fun checkupScroll() {
         val newScroll: Int = computeCurrentScroll()
-        if (newScroll >= minimumScroll && onceCall) {
+        if (newScroll >= minimumScroll && callFlag) {
             show()
-            onceCall = false
-        } else if (newScroll < minimumScroll && !onceCall) {
+            callFlag = false
+        } else if (newScroll < minimumScroll && !callFlag) {
             hide()
-            onceCall = true
+            callFlag = true
         }
     }
 
@@ -279,11 +279,11 @@ open class ScrollToTop : AppCompatImageView {
         return super.performClick()
     }
 
-    protected fun setOnceCall(onceCall: Boolean) {
-        this.onceCall = onceCall
+    protected fun setCallFlag(onceCall: Boolean) {
+        this.callFlag = onceCall
     }
 
-    protected fun isOnceCall(): Boolean {
-        return onceCall
+    protected fun getCallFlag(): Boolean {
+        return callFlag
     }
 }

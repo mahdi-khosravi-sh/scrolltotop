@@ -86,12 +86,12 @@ class ScrollToTop2 : ScrollToTop {
     override fun checkupScroll() {
         if (minimumPosition != RecyclerView.NO_POSITION) {
             val firstVisible = getFirstVisiblePosition()
-            if (firstVisible > minimumPosition && isOnceCall()) {
+            if (firstVisible > minimumPosition && getCallFlag()) {
                 show()
-                setOnceCall(false)
-            } else if (firstVisible <= minimumPosition && !isOnceCall()) {
+                setCallFlag(false)
+            } else if (firstVisible <= minimumPosition && !getCallFlag()) {
                 hide()
-                setOnceCall(true)
+                setCallFlag(true)
             }
         } else {
             super.checkupScroll()
