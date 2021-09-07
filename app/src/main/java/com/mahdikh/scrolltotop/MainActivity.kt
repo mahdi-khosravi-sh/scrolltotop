@@ -1,65 +1,67 @@
-package com.mahdikh.scrolltotop;
+package com.mahdikh.scrolltotop
 
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import androidx.appcompat.app.AppCompatActivity
+import com.mahdikh.vision.scrolltotop.widget.ScrollToTop
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import androidx.recyclerview.widget.RecyclerView
+import com.mahdikh.vision.scrolltotop.animator.FadeAnimator
+import com.mahdikh.vision.scrolltotop.animator.FlyAnimator
+import com.mahdikh.vision.scrolltotop.animator.ScaleAnimator
+import com.mahdikh.vision.scrolltotop.animator.SlideAnimator
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
+class MainActivity : AppCompatActivity() {
+    private lateinit var scrollToTop: ScrollToTop
 
-import com.mahdikh.scrolltotop.ui.RecyclerViewAdapter;
-import com.mahdikh.vision.scrolltotop.animator.FadeAnimator;
-import com.mahdikh.vision.scrolltotop.animator.FlyAnimator;
-import com.mahdikh.vision.scrolltotop.animator.ScaleAnimator;
-import com.mahdikh.vision.scrolltotop.animator.SlideAnimator;
-import com.mahdikh.vision.scrolltotop.widget.ScrollToTop;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-public class MainActivity extends AppCompatActivity {
-    private ScrollToTop scrollToTop;
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.adapter = RecyclerViewAdapter()
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        scrollToTop = findViewById(R.id.scrollToTop);
-
-        recyclerView.setAdapter(new RecyclerViewAdapter());
-        scrollToTop.setupWithRecyclerView(recyclerView);
-        scrollToTop.setSmoothScroll(true);
+        scrollToTop = findViewById(R.id.scrollToTop)
+        scrollToTop.setupWithRecyclerView(recyclerView)
+        scrollToTop.isSmoothScroll = true
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        final int id = item.getItemId();
-        if (item.isCheckable()) {
-            item.setChecked(!item.isChecked());
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if (item.isCheckable) {
+            item.isChecked = !item.isChecked
         }
-        if (id == R.id.item_fade) {
-            scrollToTop.setAnimator(new FadeAnimator());
-        } else if (id == R.id.item_fly) {
-            scrollToTop.setAnimator(new FlyAnimator());
-        } else if (id == R.id.item_scale) {
-            scrollToTop.setAnimator(new ScaleAnimator());
-        } else if (id == R.id.item_slide) {
-            scrollToTop.setAnimator(new SlideAnimator());
-        } else if (id == R.id.item_noAnimator) {
-            scrollToTop.setAnimator(null);
-        } else if (id == R.id.item_smoothScroll) {
-            scrollToTop.setSmoothScroll(item.isChecked());
-        } else if (id == R.id.item_heavyCheckup) {
-            scrollToTop.setHeavyCheckup(item.isChecked());
-        } else if (id == R.id.item_shortScroll) {
-            scrollToTop.setShortScroll(item.isChecked());
+        when (id) {
+            R.id.item_fade -> {
+                scrollToTop.animator = FadeAnimator()
+            }
+            R.id.item_fly -> {
+                scrollToTop.animator = FlyAnimator()
+            }
+            R.id.item_scale -> {
+                scrollToTop.animator = ScaleAnimator()
+            }
+            R.id.item_slide -> {
+                scrollToTop.animator = SlideAnimator()
+            }
+            R.id.item_noAnimator -> {
+                scrollToTop.animator = null
+            }
+            R.id.item_smoothScroll -> {
+                scrollToTop.isSmoothScroll = item.isChecked
+            }
+            R.id.item_heavyCheckup -> {
+                scrollToTop.isHeavyCheckup = item.isChecked
+            }
+            R.id.item_shortScroll -> {
+                scrollToTop.isShortScroll = item.isChecked
+            }
         }
-        return true;
+        return true
     }
 }
