@@ -67,6 +67,15 @@ allprojects {
   }
 }
 ```
+- or Maven :
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+```
 
 - app module build.gradle
 
@@ -79,10 +88,9 @@ dependencies {
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-<details open>
- <summary><b>Step 1</b></summary>
-<br />
-  Add the ScrollToTop or ScrollToTop2 to your layout:
+### Step 1
+
+Add teh ScrollToTop or ScrollToTop2 to your layout :
 
 ```xml
 <com.mahdikh.vision.scrolltotop.widget.ScrollToTop
@@ -90,16 +98,9 @@ dependencies {
         android:layout_width="35dp"
         android:layout_height="35dp"/>
 ```
-  
-</details>
+### Step 2
 
-
-<details open>
-  <summary><b>Step 2</b></summary>
-  <br />
-  
-  Setup your code:
-
+Setup your code : 
 <ul>
   <li>
     Kotlin
@@ -118,8 +119,14 @@ dependencies {
 ```
   </li>
 </ul>
-  
-</details>
+
+| attribute | Description | Options(examples)|
+| --- | --- | --- |
+| smoothScroll | | |
+| shortScroll | | |
+| rippleColor | | |
+| heavyCheckup | | |
+| minimumScroll | | |
 
 <!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
