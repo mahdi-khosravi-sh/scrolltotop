@@ -57,7 +57,7 @@ app module build.gradle
 
 ```gradle
 dependencies {
-  implementation 'com.github.mahdidev78:scrolltotop:2.1.2'
+  implementation 'com.github.mahdidev78:scrolltotop:2.1.9'
 }
 ```
     
