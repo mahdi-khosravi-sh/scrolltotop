@@ -12,7 +12,6 @@
         <attr name="android:background" />
         <attr name="srcCompat" />
         <attr name="android:src" />
-        <attr name="android:elevation" />
         <attr name="android:padding" />
     </declare-styleable>
 </resources>

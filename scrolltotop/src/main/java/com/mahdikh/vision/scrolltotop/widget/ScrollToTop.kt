@@ -143,8 +143,8 @@ open class ScrollToTop : AppCompatImageView {
                 R.styleable.ScrollToTop_minimumScroll -> {
                     minimumScroll = a.getDimensionPixelOffset(index, 250)
                 }
-                R.styleable.ScrollToTop_shortScroll->{
-                    isShortScroll = a.getBoolean(index,false)
+                R.styleable.ScrollToTop_shortScroll -> {
+                    isShortScroll = a.getBoolean(index, false)
                 }
             }
         }
@@ -161,8 +161,8 @@ open class ScrollToTop : AppCompatImageView {
                 }
             }
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            elevation = a.getDimension(R.styleable.ScrollToTop_android_elevation, 2f)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && elevation == 0.0F) {
+            elevation = 2f
         }
         val padding = a.getDimensionPixelOffset(R.styleable.ScrollToTop_android_padding, 6)
         setPadding(padding, padding, padding, padding)
