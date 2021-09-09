@@ -135,22 +135,16 @@ open class ScrollToTop : AppCompatImageView {
                     minimumPosition = a.getInt(index, RecyclerView.NO_POSITION)
                 }
                 R.styleable.ScrollToTop_heavyCheckup -> {
-                    isHeavyCheckup = a.getBoolean(
-                        R.styleable.ScrollToTop_heavyCheckup,
-                        false
-                    )
+                    isHeavyCheckup = a.getBoolean(index, false)
                 }
                 R.styleable.ScrollToTop_smoothScroll -> {
-                    isSmoothScroll = a.getBoolean(
-                        R.styleable.ScrollToTop_smoothScroll,
-                        false
-                    )
+                    isSmoothScroll = a.getBoolean(index, false)
                 }
                 R.styleable.ScrollToTop_minimumScroll -> {
-                    minimumScroll = a.getDimensionPixelOffset(
-                        R.styleable.ScrollToTop_minimumScroll,
-                        250
-                    )
+                    minimumScroll = a.getDimensionPixelOffset(index, 250)
+                }
+                R.styleable.ScrollToTop_shortScroll->{
+                    isShortScroll = a.getBoolean(index,false)
                 }
             }
         }
