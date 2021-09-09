@@ -9,7 +9,6 @@
         <attr name="rippleColor" format="color" />
         <attr name="smoothScroll" format="boolean" />
         <attr name="shortScroll" format="boolean" />
-        <attr name="android:background" />
         <attr name="android:padding" />
     </declare-styleable>
 </resources>
