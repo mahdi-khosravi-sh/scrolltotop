@@ -149,9 +149,10 @@ open class ScrollToTop : AppCompatImageView {
             }
         }
 
-        if (!a.hasValue(R.styleable.ScrollToTop_android_src) && !a.hasValue(R.styleable.ScrollToTop_srcCompat)) {
+        if (drawable == null) {
             setImageResource(R.drawable.ic_scroll_top)
         }
+
         if (!a.hasValue(R.styleable.ScrollToTop_android_background)) {
             setBackgroundResource(R.drawable.oval_background)
             if (a.hasValue(R.styleable.ScrollToTop_rippleColor)) {
