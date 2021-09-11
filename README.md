@@ -91,7 +91,7 @@ Add the dependency
 
 ### Step 1
 
-Add the ScrollToTop or ScrollToTop2 to your layout :
+Add the ScrollToTop to your layout :
 
 ```xml
 <com.mahdikh.vision.scrolltotop.widget.ScrollToTop
