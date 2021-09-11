@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android'
 
 def LIB_GROUP_ID = 'com.mahdikh.vision'
 def LIB_ARTIFACT_ID = 'scrolltotop'
-def LIB_VERSION = '2.1.9'
+def LIB_VERSION = '2.1.10'
 
 android {
     compileSdk 30
@@ -14,7 +14,7 @@ android {
     defaultConfig {
         minSdk 19
         targetSdk 30
-        versionCode 6
+        versionCode 7
         versionName LIB_VERSION
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -23,7 +23,6 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -46,7 +45,7 @@ publishing {
             groupId LIB_GROUP_ID
             artifactId LIB_ARTIFACT_ID
             version LIB_VERSION
-            artifact("$buildDir/outputs/aar/scrolltotop-debug.aar")
+            artifact("$buildDir/outputs/aar/scrolltotop-release.aar")
             artifact(sourceJar)
             pom.withXml {
                 def dependenciesNode = asNode().appendNode('dependencies')
