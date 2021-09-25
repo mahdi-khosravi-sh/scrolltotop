@@ -25,6 +25,7 @@ A simple, fast and beautiful widget for scrolling RecyclerView
         <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
+    <li><a href="#compatibility">Compatibility</a></li>
     <li><a href="#stats">Stats</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -174,6 +175,10 @@ scrollToTop.setAnimator(animator);
 
 <!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
+## Compatibility
+
+- Android KitKat 4.4+
+
 ## Stats
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -196,7 +201,19 @@ Contributions are what make the open source community such an amazing place to l
 <!-- LICENSE -->
 ## License
 
-Distributed under the Apache2.0 License. See `LICENSE` for more information.
+    Copyright 2021, mahdidev78
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 
 <!-- CONTACT -->
 ## Contact
