@@ -1,18 +1,14 @@
 # Scroll To Top
 
-A simple, fast and beautiful widget for scrolling RecyclerView
-
- <div align="center">
-
-  https://user-images.githubusercontent.com/88603424/132222272-24f435ee-a503-4768-b635-f8277a800e73.mp4
-
-</div>
+<img src="https://user-images.githubusercontent.com/88603424/134986812-12b0dce6-c282-44f6-8e37-ab7f1034de8d.gif" alt="ScrollToTop" align="right" width="35%" />
 
 [![](https://jitpack.io/v/mahdidev78/scrolltotop.svg)](https://jitpack.io/#mahdidev78/scrolltotop)
 ![GitHub repo size](https://img.shields.io/github/repo-size/mahdidev78/scrolltotop)
 ![GitHub language count](https://img.shields.io/github/languages/count/mahdidev78/scrolltotop)
 ![GitHub top language](https://img.shields.io/github/languages/top/mahdidev78/scrolltotop)
 ![GitHub last commit](https://img.shields.io/github/last-commit/mahdidev78/scrolltotop?color=red)
+
+A simple, fast and beautiful widget for scrolling RecyclerView
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
