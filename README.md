@@ -1,6 +1,6 @@
 # Scroll To Top
 
-<img src="https://user-images.githubusercontent.com/88603424/134986812-12b0dce6-c282-44f6-8e37-ab7f1034de8d.gif" alt="ScrollToTop" align="right" width="35%" />
+<img src="https://user-images.githubusercontent.com/88603424/134986812-12b0dce6-c282-44f6-8e37-ab7f1034de8d.gif" alt="ScrollToTop" align="right" width="36%" />
 
 [![](https://jitpack.io/v/mahdidev78/scrolltotop.svg)](https://jitpack.io/#mahdidev78/scrolltotop)
 ![GitHub repo size](https://img.shields.io/github/repo-size/mahdidev78/scrolltotop)
