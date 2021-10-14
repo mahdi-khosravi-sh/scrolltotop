@@ -1,17 +1,28 @@
 package com.mahdikh.vision.scrolltotop.animator
 
+import android.animation.TimeInterpolator
 import android.view.View
-import android.view.animation.Interpolator
 
 abstract class BaseAnimator {
-    var duration = 125
-    var interpolator: Interpolator? = null
+    var duration:Long = 125
+    var interpolator:TimeInterpolator?=null
 
-    abstract fun onPrepare(view: View)
+    fun animateShow(view: View){
+        preAnimateShow(view)
+        animateShowImpl(view)
+    }
 
-    abstract fun onShow(view: View)
+    fun animateHide(view: View){
+        animateHideImpl(view)
+    }
 
-    abstract fun onHide(view: View)
+    abstract fun prepare(view: View)
 
-    open fun onStartScroll(view: View) {}
+    protected abstract fun preAnimateShow(view: View)
+
+    protected abstract fun animateShowImpl(view: View)
+
+    protected abstract fun animateHideImpl(view: View)
+
+    open fun onStartScroll(view: View){}
 }

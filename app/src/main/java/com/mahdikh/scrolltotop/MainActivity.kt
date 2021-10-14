@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.RecyclerView
-import com.mahdikh.vision.scrolltotop.animator.FadeAnimator
-import com.mahdikh.vision.scrolltotop.animator.FlyAnimator
-import com.mahdikh.vision.scrolltotop.animator.ScaleAnimator
-import com.mahdikh.vision.scrolltotop.animator.SlideAnimator
+import com.mahdikh.vision.scrolltotop.animator.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var scrollToTop: ScrollToTop
@@ -24,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         scrollToTop = findViewById(R.id.scrollToTop)
         scrollToTop.setupWithRecyclerView(recyclerView)
         scrollToTop.isSmoothScroll = true
+        scrollToTop.animator = FadeAnimator()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

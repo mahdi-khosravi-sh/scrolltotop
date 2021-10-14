@@ -5,37 +5,38 @@ import android.view.View
 open class FadeAnimator : BaseAnimator {
     var maxAlpha: Float
 
-    constructor(maxAlpha: Float) {
+    constructor() : super() {
+        maxAlpha = 0.8F
+    }
+
+    constructor(maxAlpha: Float) : super() {
         this.maxAlpha = maxAlpha
     }
 
-    constructor() {
-        maxAlpha = 0.8f
-    }
-
-    override fun onPrepare(view: View) {
-        view.alpha = 0.0f
+    override fun prepare(view: View) {
         view.visibility = View.GONE
+        view.alpha = 0.0F
     }
 
-    override fun onShow(view: View) {
+    override fun preAnimateShow(view: View) {
         view.visibility = View.VISIBLE
-        view.alpha = 0.0f
-        view.animate()
-            .alpha(maxAlpha)
-            .setDuration(duration.toLong()).interpolator = interpolator
+        view.alpha = 0.0F
     }
 
-    override fun onHide(view: View) {
-        view.animate()
-            .alpha(0f)
-            .setDuration(duration.toLong())
-            .setInterpolator(interpolator)
-            .withEndAction { view.visibility = View.GONE }
+    override fun animateShowImpl(view: View) {
+        view.animate().apply {
+            alpha(maxAlpha)
+            duration = this@FadeAnimator.duration
+            interpolator = null
+        }.start()
     }
 
-    fun setMaxAlpha(maxAlpha: Float): FadeAnimator {
-        this.maxAlpha = maxAlpha
-        return this
+    override fun animateHideImpl(view: View) {
+        view.animate().apply {
+            alpha(0.0F)
+            duration = this@FadeAnimator.duration
+            interpolator = null
+            withEndAction { view.visibility = View.GONE }
+        }.start()
     }
 }
