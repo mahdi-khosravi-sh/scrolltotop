@@ -45,7 +45,7 @@ open class ScrollToTop : AppCompatImageView {
     /**
      * حداقل مقدار اسکرول که چهت نمایش ScrollToTop نیاز است
      */
-    var minimumScroll = 0
+    var minimumScroll = 150
 
     /**
      * اگر مقدار غیر از RecyclerView.NO_POSITION داشته باشد به این معناست
