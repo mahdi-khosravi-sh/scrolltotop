@@ -279,7 +279,7 @@ open class ScrollToTop : AppCompatImageView {
 
     @CallSuper
     protected open fun prepare() {
-        animator?.onPrepare(this)
+        animator?.prepare(this)
         recyclerView?.let {
             checkupScroll()
         }
@@ -287,7 +287,7 @@ open class ScrollToTop : AppCompatImageView {
 
     @CallSuper
     protected open fun show() {
-        animator?.onShow(this) ?: kotlin.run {
+        animator?.animateShow(this) ?: kotlin.run {
             alpha = 1.0F
             visibility = VISIBLE
         }
@@ -295,7 +295,7 @@ open class ScrollToTop : AppCompatImageView {
 
     @CallSuper
     protected open fun hide() {
-        animator?.onHide(this) ?: kotlin.run {
+        animator?.animateHide(this) ?: kotlin.run {
             visibility = GONE
         }
     }
