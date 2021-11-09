@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android'
 
 def LIB_GROUP_ID = 'com.mahdikh.vision'
 def LIB_ARTIFACT_ID = 'scrolltotop'
-def LIB_VERSION = '2.2.1'
+def LIB_VERSION = '2.2.2'
 
 android {
     compileSdk 30
@@ -14,7 +14,7 @@ android {
     defaultConfig {
         minSdk 19
         targetSdk 30
-        versionCode 9
+        versionCode 10
         versionName LIB_VERSION
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
